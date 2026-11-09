@@ -1,0 +1,10 @@
+{
+  "name": "@quemcozinha/queue",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": { "registry": "https://npm.pkg.github.com" },
+  "scripts": { "build": "tsc", "test": "vitest run" },
+  "dependencies": { "bullmq": "^5", "ioredis": "^5" },
+  "devDependencies": { "typescript": "^5", "vitest": "^4" }
+}
