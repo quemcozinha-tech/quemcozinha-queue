@@ -1,11 +1,11 @@
-# @quemcozinha/queue
+# @quemcozinha-tech/queue
 
 Pacote npm de infraestrutura pura para filas BullMQ. Exporta primitivos de conexão Redis e fábrica de filas/workers — sem conhecimento de nenhuma feature de negócio.
 
 ## Uso
 
 ```ts
-import { createRedisConnection, createQueue, createWorker } from "@quemcozinha/queue";
+import { createRedisConnection, createQueue, createWorker } from "@quemcozinha-tech/queue";
 
 const redis = createRedisConnection(process.env.REDIS_URL ?? "redis://localhost:6379");
 
@@ -41,10 +41,10 @@ Após qualquer mudança no código-fonte, rode `npm run build` novamente e reini
 
 ## Publicação (produção)
 
-Em produção, o pacote é publicado no GitHub Packages como `@quemcozinha/queue`. Os serviços trocam o `file:` dep pela versão publicada:
+Em produção, o pacote é publicado no GitHub Packages como `@quemcozinha-tech/queue`. Os serviços trocam o `file:` dep pela versão publicada:
 
 ```json
-"@quemcozinha/queue": "^1.0.0"
+"@quemcozinha-tech/queue": "^1.0.0"
 ```
 
-O build Docker de cada serviço usa `--mount=type=secret,id=npm_token` + `.npmrc` com `@quemcozinha:registry=https://npm.pkg.github.com` para autenticar no GitHub Packages.
+O build Docker de cada serviço usa `.npmrc` com `@quemcozinha-tech:registry=https://npm.pkg.github.com` e `NPM_TOKEN` para autenticar no GitHub Packages.
